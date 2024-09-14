@@ -1,1 +1,8 @@
-<p>zone works!</p>
+<h2>From zone to zoneless</h2>
+<div *ngIf="likeAngular">I like Angular</div>
+<div *ngIf="!likeAngular">I don't like Angular</div>
+<button (click)="toggle()">Toggle</button>
+<h3>The counter below requires zone</h3>
+<button (click)="startCounter()">Start counter</button>&nbsp;
+<button (click)="stopCounter()">Stop counter</button>
+<p>&nbsp;&nbsp;count: {{count}}</p>
