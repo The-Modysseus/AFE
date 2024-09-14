@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-zone',
@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class ZoneComponent {
   likeAngular = true;
-  count = 0;
+  count = signal(0);
   counter: any;
 
   toggle() {
@@ -19,7 +19,8 @@ export class ZoneComponent {
  
   startCounter() {
     this.counter = setInterval(() => {
-      console.log(this.count++);
+      this.count.set(this.count() + 1);
+      console.log( this.count());
     }, 1000);
   }
 
