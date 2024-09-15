@@ -1,0 +1,6 @@
+<h2>Hot observable</h2>
+<h3>Current mouse position</h3>
+<div *ngIf="(mouseMoves$ | async) as mouseMove">
+Mouse X: {{mouseMove.clientX}}<br />
+Mouse Y: {{mouseMove.clientY}}<br />
+</div>
