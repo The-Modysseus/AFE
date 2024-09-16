@@ -1,1 +1,9 @@
-<p>client-overview works!</p>
+@for (client of clients; track $index) {
+    <div class="client-card">
+        <img [src]="client.picture" alt="Client Picture">
+        <h2>{{ client.first_name }} {{ client.last_name }}</h2>
+        <p>Email: {{ client.email }}</p>
+        <p>Gender: {{ client.gender }}</p>
+        <p>Wallet: {{ client.wallet }}</p>
+    </div>
+}

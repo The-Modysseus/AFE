@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Client } from '../client/client';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Client } from '../client/client';
 export class ClientService {
   httpClient = inject(HttpClient);
 
-  getClients() {
-    return this.httpClient.get<Client[]>('localhost:3000/exercise/client');
+  getClients(): Observable<Client[]> {
+    return this.httpClient.get<Client[]>('http://localhost:3000/exercise/client');    
   }
 }
