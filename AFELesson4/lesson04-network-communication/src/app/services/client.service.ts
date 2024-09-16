@@ -9,6 +9,6 @@ export class ClientService {
   httpClient = inject(HttpClient);
 
   getClients() {
-    return this.httpClient.get<Client[]>('http://localhost:3000/clients');
+    return this.httpClient.get<Client[]>('localhost:3000/exercise/client');
   }
 }
