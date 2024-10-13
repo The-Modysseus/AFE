@@ -17,9 +17,7 @@ export class ClientOverviewComponent {
   clients: Client[] = [];
 
   getClients() {
-    console.log ("Getting clients");
     return this.clientService.getClients().subscribe((clients) => { 
-      console.log(clients);
       this.clients = clients; });
   }
 
