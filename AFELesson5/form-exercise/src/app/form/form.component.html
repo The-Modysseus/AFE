@@ -1,1 +1,43 @@
-<p>form works!</p>
+<form [formGroup]="warcraftForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" type="text" />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password" />
+  </div>
+  <div>
+    <label for="confirm_password">Confirm Password:</label>
+    <input
+      id="confirm_password"
+      formControlName="confirm_password"
+      type="password"
+    />
+  </div>
+  <div>
+    <label for="race">Race:</label>
+    <select id="race" formControlName="race">
+      <option *ngFor="let race of races" [value]="race.name">
+        {{ race.name }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="class">Class:</label>
+    <select id="class" formControlName="class">
+      <option *ngFor="let class of classes" [value]="class.name">
+        {{ class.name }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="level">Level:</label>
+    <input id="level" formControlName="level" type="number" />
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
