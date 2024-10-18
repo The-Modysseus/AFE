@@ -4,11 +4,12 @@ import { WarcraftService } from '../warcraft.service';
 import { Race } from '../race.type';
 import { Class } from '../class.type';
 import { CommonModule } from '@angular/common';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, NavigationComponent],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
